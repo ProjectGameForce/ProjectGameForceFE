@@ -1,5 +1,35 @@
 import Image from "next/image";
 
+const reviewList = [
+  {
+    name: "John Doe",
+    review: "Excellent product, highly recommended!",
+  },
+  {
+    name: "Jane Smith",
+    review: "Great service and fast delivery.",
+  },
+  {
+    name: "Alex Johnson",
+    review: "Very satisfied with my purchase.",
+  },
+  {
+    name: "Emily Davis",
+    review: "Amazing quality, will definitely order again.",
+  },
+  {
+    name: "Michael Brown",
+    review: "Not quite what I expected, but good overall.",
+  },
+  {
+    name: "Sarah Wilson",
+    review: "Customer support was helpful and responsive.",
+  },
+  {
+    name: "David Martinez",
+    review: "The product exceeded my expectations!",
+  },
+];
 export default function Home() {
   return (
     <main className="">
@@ -19,6 +49,7 @@ export default function Home() {
 
       <div className="hidden md:block">
         <ul className="flex justify-between px-6 bg-blue-200 font-monoRoboto">
+          {/* Maps the array. This causes the item to be repeated over the element on the inside */}
           {[
             "Playstation",
             "Xbox",
@@ -61,6 +92,7 @@ export default function Home() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      <ReviewsArea></ReviewsArea>
 
       <div>
         <footer className="bg-[#2b2b2b] h-28 mt-20">
@@ -82,4 +114,25 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+type ReviewProps = {
+  name: string;
+  review: string;
+};
+const Review = ({ name, review }: ReviewProps) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <q>{review}</q>
+    </div>
+  );
+};
+
+function ReviewsArea() {
+  return reviewList.map((item: ReviewProps) => (
+    <div className="flex flex-row">
+      <Review name={item.name} key={item.name} review={item.review}></Review>
+    </div>
+  ));
 }
