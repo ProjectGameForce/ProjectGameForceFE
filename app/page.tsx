@@ -3,37 +3,46 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
-      <nav className="flex justify-between py-[5px] bg-orange-500">
+      <nav className="flex justify-between py-[5px] bg-orange-500 sticky">
         <div>
-          <h1>Hello world</h1>
+          <h1>Game Force</h1>
         </div>
         <div className="flex justify-between space-x-4 mr-4">
-          <a href={`tel:8163834597`}>816-383-4597</a>
+          <a href={`tel:8163834597`} className="hover:underline">
+            816-383-4597
+          </a>
           <button className="">Home</button>
           <button>Contact</button>
           <button>About</button>
         </div>
       </nav>
-      <div>
+
+      <div className="hidden md:block">
         <ul className="flex justify-between px-6 bg-blue-200 font-monoRoboto">
-          <li className="">Playstation</li>
-          <li>Xbox</li>
-          <li>Nintendo</li>
-          <li>Wall Scrolls</li>
-          <li>Plushies</li>
-          <li>Board Games</li>
-          <li>Game Disks</li>
-          <li>Game Cartridges</li>
-          <li>Collectables</li>
+          {[
+            "Playstation",
+            "Xbox",
+            "Nintendo",
+            "Wall Scrolls",
+            "Plushies",
+            "Board Games",
+            "Game Disks",
+            "Game Cartridges",
+            "Collectables",
+          ].map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </div>
+
       <div className="flex flex-col">
         <div className="text-[128px] text-center">Game Force</div>
-        <div className="bg-orange-500 border-[5px] border-orange-700 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-monoRoboto">
+        <div className="bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-semibold font-monoRoboto">
           Boulder's Finest One-stop Game Shop
         </div>
       </div>
-      <div className="flex flex-row justify-between mx-[10%]">
+
+      <div className="flex flex-col md:flex-row justify-between mx-[10%]">
         <div className="flex flex-col items-center">
           <h1 className="text-[50px] font-monoRoboto">Buy • Sell • Trade</h1>
           <p className=" w-[26rem] text-2xl font-monoRoboto">
@@ -52,9 +61,10 @@ export default function Home() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+
       <div>
         <footer className="bg-[#2b2b2b] h-28 mt-20">
-          <div className="flex text-[#e3e3e3] justify-between mx-[10%] py-4">
+          <div className="flex text-[#e3e3e3] justify-between mx-[2%] py-4">
             <div>
               <h1 className="text-3xl">Game Force®</h1>
               <p>Buy•Sell•Trade</p>
