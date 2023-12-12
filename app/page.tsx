@@ -1,17 +1,23 @@
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { resolveTypeReferenceDirective } from "typescript";
 
 const reviewList = [
   {
-    name: "John Doe",
-    review: "Excellent product, highly recommended!",
+    name: "J Shade",
+    review:
+      "This is the best game store ever! I came in today in a bind with my PS3 and the gentleman helped me out immensely. I have been coming to this store for at least 20 years and there will never be a better place for games and movies then Gameforce!",
   },
   {
-    name: "Jane Smith",
-    review: "Great service and fast delivery.",
+    name: "Ian Lansberry",
+    review:
+      "I love this place and have been shopping here for years. Prices are good and they have a lot of vintage gaming equipment and games as well as new items too!",
   },
   {
-    name: "Alex Johnson",
-    review: "Very satisfied with my purchase.",
+    name: "Ryan M",
+    review:
+      "I've been collecting retro games for close to 10 years, so I've been to a lot of game stores and this is one of the best I've been in. The selection was excellent. The pricing wasn't bad. It wasn't cheap, but I've seen worse. Overall I was impressed.",
   },
   {
     name: "Emily Davis",
@@ -92,7 +98,9 @@ export default function Home() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <ReviewsArea></ReviewsArea>
+      <div className="flex flex-row">
+        <Spinner />
+      </div>
 
       <div>
         <footer className="bg-[#2b2b2b] h-28 mt-20">
@@ -122,17 +130,64 @@ type ReviewProps = {
 };
 const Review = ({ name, review }: ReviewProps) => {
   return (
-    <div>
+    <div className="w-1/3 mx-10">
       <h1>{name}</h1>
       <q>{review}</q>
     </div>
   );
 };
 
-function ReviewsArea() {
-  return reviewList.map((item: ReviewProps) => (
-    <div className="flex flex-row">
-      <Review name={item.name} key={item.name} review={item.review}></Review>
+function Spinner() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrev = () => {
+    const isFirst = currentIndex === 0;
+    const newIndex = isFirst ? reviewList.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goNext = () => {
+    const isLast = currentIndex === reviewList.length - 1;
+    const newIndex = isLast ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  return (
+    <div className="flex flex-row mx-10 justify-between mt-20">
+      <button onClick={goToPrev}>Previous</button>
+      <div className="flex flex-row justify-between h-60 w-[90%]">
+        <Review
+          name={
+            reviewList[
+              currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1
+            ].name
+          }
+          review={
+            reviewList[
+              currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1
+            ].review
+          }
+        />
+        <Review
+          name={reviewList[currentIndex].name}
+          review={reviewList[currentIndex].review}
+        />
+        <Review
+          name={
+            reviewList[
+              currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1
+            ].name
+          }
+          review={
+            reviewList[
+              currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1
+            ].review
+          }
+        />
+      </div>
+      <button className="right-10" onClick={goNext}>
+        Next
+      </button>
     </div>
-  ));
+  );
 }
