@@ -23,7 +23,7 @@ export function Spinner() {
     });
   };
   return (
-    <div className="flex flex-row mx-10 justify-center my-20 w-[70%]">
+    <div className="flex flex-row mx-10 justify-center items-center my-20 w-[70%]">
       <SliderButton onClick={goToPrev}>Previous</SliderButton>
       <div className="flex flex-col md:flex-row justify-center h-60">
         <Review
