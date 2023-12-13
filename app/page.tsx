@@ -1,9 +1,13 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { resolveTypeReferenceDirective } from "typescript";
-
-const reviewList = [
+import { Spinner } from "./Spinner";
+export type ReviewObj = {
+  name: string;
+  review: string;
+};
+export const reviewList: ReviewObj[] = [
   {
     name: "J Shade",
     review:
@@ -121,89 +125,5 @@ export default function Home() {
         </footer>
       </div>
     </main>
-  );
-}
-
-type ReviewProps = {
-  name: string;
-  review: string;
-  styles: string;
-};
-const Review = ({ name, review, styles }: ReviewProps) => {
-  return (
-    <div
-      className={`-mx-10  w-64 h-80 border-2 rounded-xl ${styles} border-gray-600 bg-gray-200`}
-    >
-      <div className="m-5">
-        <q>{review}</q>
-        <h1 className="float-right mr-10 font-bold">-{name}</h1>
-      </div>
-    </div>
-  );
-};
-
-function Spinner() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const buttonStyles = "b-2 bg-gray-200 border-gray-700 mx-5";
-  const goToPrev = () => {
-    const newIndex =
-      currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goNext = () => {
-    const newIndex =
-      currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  return (
-    <div className="flex flex-row mx-10 justify-center my-20 w-[70%]">
-      <button
-        onClick={goToPrev}
-        className="border-2 p-2 bg-gray-200 border-gray-700 mx-20 font-bold items-center h-5"
-      >
-        Previous
-      </button>
-      <div className="flex flex-col md:flex-row justify-center h-60">
-        <Review
-          name={
-            reviewList[
-              currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1
-            ].name
-          }
-          review={
-            reviewList[
-              currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1
-            ].review
-          }
-          styles={" -z-10"}
-        />
-        <Review
-          name={reviewList[currentIndex].name}
-          review={reviewList[currentIndex].review}
-          styles={" mt-10"}
-        />
-        <Review
-          name={
-            reviewList[
-              currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1
-            ].name
-          }
-          review={
-            reviewList[
-              currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1
-            ].review
-          }
-          styles={"-z-10 "}
-        />
-      </div>
-      <button
-        className="b-2 bg-gray-200 border-gray-700 mx-20 font-bold"
-        onClick={goNext}
-      >
-        Next
-      </button>
-    </div>
   );
 }
