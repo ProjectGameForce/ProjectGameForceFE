@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { reviewList } from "./page";
 import { Review } from "./ReviewProps";
+import { SliderButton } from "./SliderButton";
 
 export function Spinner() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,15 +22,9 @@ export function Spinner() {
         : currentCurrentIndex + 1;
     });
   };
-  console.log(currentIndex === 0 ? reviewList.length : currentIndex - 1);
   return (
     <div className="flex flex-row mx-10 justify-center my-20 w-[70%]">
-      <button
-        onClick={goToPrev}
-        className="border-2 p-2 bg-gray-200 border-gray-700 mx-20 font-bold items-center h-5"
-      >
-        Previous
-      </button>
+      <SliderButton onClick={goToPrev}>Previous</SliderButton>
       <div className="flex flex-col md:flex-row justify-center h-60">
         <Review
           reviewObj={
@@ -49,12 +44,7 @@ export function Spinner() {
           styles={"-z-10 "}
         />
       </div>
-      <button
-        className="b-2 bg-gray-200 border-gray-700 mx-20 font-bold"
-        onClick={goNext}
-      >
-        Next
-      </button>
+      <SliderButton onClick={goNext}>Next</SliderButton>
     </div>
   );
 }
