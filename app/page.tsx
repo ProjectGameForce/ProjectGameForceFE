@@ -39,7 +39,7 @@ const reviewList = [
 export default function Home() {
 	return (
 		<main className="">
-			<nav className="flex justify-between py-[5px] bg-orange-500 sticky">
+			<nav className="flex justify-between py-[5px] w-[100%] bg-orange-500 sticky">
 				<div>
 					<h1>Game Force</h1>
 				</div>
@@ -98,7 +98,7 @@ export default function Home() {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
-			<div className="flex flex-row">
+			<div className="flex justify-center flex-row">
 				<Spinner />
 			</div>
 
@@ -130,9 +130,11 @@ type ReviewProps = {
 };
 const Review = ({ name, review }: ReviewProps) => {
 	return (
-		<div className="w-1/3 mx-10">
-			<h1>{name}</h1>
-			<q>{review}</q>
+		<div className="mx-5 w-64 h-80 border-2 rounded-xl  border-gray-600 bg-gray-200">
+			<div className="m-5">
+				<q>{review}</q>
+				<h1 className="float-right mr-10 font-bold">-{name}</h1>
+			</div>
 		</div>
 	);
 };
@@ -153,9 +155,9 @@ function Spinner() {
 	};
 
 	return (
-		<div className="flex flex-row mx-10 justify-between mt-20">
+		<div className="flex flex-row mx-10 justify-between my-20 w-[70%]">
 			<button onClick={goToPrev}>Previous</button>
-			<div className="flex flex-row justify-between h-60 w-[90%]">
+			<div className="flex flex-col md:flex-row justify-center h-60">
 				<Review
 					name={
 						reviewList[
@@ -185,7 +187,7 @@ function Spinner() {
 					}
 				/>
 			</div>
-			<button className="right-10" onClick={goNext}>
+			<button className="" onClick={goNext}>
 				Next
 			</button>
 		</div>
