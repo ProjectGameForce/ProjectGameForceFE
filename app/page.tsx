@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { resolveTypeReferenceDirective } from "typescript";
+import Logo from "./assets/gameforcelogo.gif"
 import { Spinner } from "./Spinner";
 export type ReviewObj = {
   name: string;
@@ -43,22 +44,47 @@ export const reviewList: ReviewObj[] = [
 export default function Home() {
   return (
     <main className="">
-      <nav className="flex justify-between py-[5px] w-[100%] bg-orange-500 sticky">
+      <nav className="flex justify-between py-[8px] w-[100%] bg-[#2b2b2b] sticky">
         <div>
-          <h1>Game Force</h1>
+          <h1 className="flex text-[#e3e3e3] px-[15px]">Game Force</h1>
         </div>
-        <div className="flex justify-between space-x-4 mr-4">
-          <a href={`tel:8163834597`} className="hover:underline">
-            816-383-4597
+        <div className="flex text-[#e3e3e3] justify-between space-x-4 mr-4">
+          <a href={`tel:8163834597`} className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>
+              816-383-4597
+              </span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            
           </a>
-          <button className="">Home</button>
-          <button>Contact</button>
-          <button>About</button>
+          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>
+              Home
+              </span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            
+          </button>
+          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>
+              Contact
+            </span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            
+          </button>
+          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>
+              About
+              <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            </span>
+          </button>
         </div>
       </nav>
 
       <div className="hidden md:block">
-        <ul className="flex justify-between px-6 bg-blue-200 font-monoRoboto">
+        <ul className="flex justify-between py-1 h-8 px-6 bg-blue-200 font-monoRoboto">
           {/* Maps the array. This causes the item to be repeated over the element on the inside */}
           {[
             "Playstation",
@@ -71,13 +97,13 @@ export default function Home() {
             "Game Cartridges",
             "Collectables",
           ].map((item) => (
-            <li key={item}>{item}</li>
+            <li className="w-18 hover:animate-bounce" key={item}>{item}</li>
           ))}
         </ul>
       </div>
 
-      <div className="flex flex-col">
-        <div className="text-[128px] text-center">Game Force</div>
+      <div className="flex flex-col items-center">
+        <img src={`Logo`} alt="Logo GIF" width={500} height={200} className="tailwind-class-names"/>
         <div className="bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-semibold font-monoRoboto">
           Boulder's Finest One-stop Game Shop
         </div>
