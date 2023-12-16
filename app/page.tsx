@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { resolveTypeReferenceDirective } from "typescript";
 import { Spinner } from "./Spinner";
 import HeroImage from "./assets/heroplaceholder.jpg";
 import StillLogo from "./assets/gfLogo.png";
+import logoGIF from "./assets/hope.gif";
 export type ReviewObj = {
   name: string;
   review: string;
@@ -98,22 +99,25 @@ export default function Home() {
           ))}
         </ul>
       </div>
-      <div className="flex flex-col items-center">
-        <img
-          src="./assets/gameforcelogo.gif"
+      <div className="flex flex-col relative items-center mt-20">
+        <Image
+          src={logoGIF}
           alt="Logo GIF"
-          width={500}
+          width={800}
           height={200}
-          className="tailwind-class-names"
+          className=" absolute tailwind-class-names mb-10 z-20"
+          unoptimized
         />
         <Image
           src={HeroImage}
-          sizes="(max-width: 1280px) 100vw, 33vw"
+          width={960}
+          height={100}
           objectFit="cover"
           objectPosition="center"
           alt="hero image example"
+          className="-z-10"
         />
-        <div className="bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-semibold font-monoRoboto">
+        <div className=" -mt-40 mb-44 z-20 bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl p-3 font-semibold font-monoRoboto">
           Boulder's Finest One-stop Game Shop
         </div>
       </div>
@@ -161,4 +165,7 @@ export default function Home() {
       </div>
     </main>
   );
+}
+function LoopThatShit() {
+  return <img src={`${logoGIF}`} alt="Logo GIF" width="500" height="200" />;
 }
