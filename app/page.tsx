@@ -4,7 +4,7 @@ import React from "react";
 import { resolveTypeReferenceDirective } from "typescript";
 import { Spinner } from "./Spinner";
 import HeroImage from "./assets/heroplaceholder.jpg";
-import StillLogo from "./assets/gflogo.png"
+import StillLogo from "./assets/gfLogo.png";
 export type ReviewObj = {
   name: string;
   review: string;
@@ -45,35 +45,28 @@ export const reviewList: ReviewObj[] = [
 export default function Home() {
   return (
     <main className="">
-      <nav className="flex justify-between py-[8px] w-[100%] bg-[#2b2b2b] sticky">
-        <div>
-          <Image 
-            src={StillLogo} alt={"logo"} height={60}  />
+      <nav className="flex justify-between py-[8px] w-[100%] items-center bg-[#3c3c3c] sticky">
+        <div className="items-center">
+          <Image src={StillLogo} alt={"logo"} height={20} />
         </div>
         <div className="flex text-[#e3e3e3] justify-between space-x-4 mr-4">
-          <a href={`tel:8163834597`} className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
-            <span>
-              816-383-4597
-              </span>
-              <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
-              <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
-            
-          </a>
-          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
-            <span>
-              Home
-              </span>
-              <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
-              <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
-            
-          </button>
-          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
-            <span>
-              Contact
-            </span>
+          <a
+            href={`tel:8163834597`}
+            className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700"
+          >
+            <span>816-383-4597</span>
             <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
             <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
-            
+          </a>
+          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>Home</span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+          </button>
+          <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
+            <span>Contact</span>
+            <span className="absolute -bottom-1 left-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
+            <span className="absolute -bottom-1 right-1/2 w-0 h-[9px] bg-orange-600 group-hover:w-1/2 group-hover:duration-700 group-hover:transition-all duration-1000 ease-in-out"></span>
           </button>
           <button className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
             <span>
@@ -99,19 +92,26 @@ export default function Home() {
             "Game Cartridges",
             "Collectables",
           ].map((item) => (
-            <li className="w-18 hover:animate-bounce" key={item}>{item}</li>
+            <li className="w-18 hover:animate-bounce" key={item}>
+              {item}
+            </li>
           ))}
         </ul>
       </div>
       <div className="flex flex-col items-center">
-        <img src="./assets/gameforcelogo.gif" alt="Logo GIF" width={500} height={200} className="tailwind-class-names"/>
-        <Image 
-        src={HeroImage}
-        
-        sizes="(max-width: 1280px) 100vw, 33vw"
-        objectFit="cover"
-        objectPosition="center"
-        alt="hero image example"
+        <img
+          src="./assets/gameforcelogo.gif"
+          alt="Logo GIF"
+          width={500}
+          height={200}
+          className="tailwind-class-names"
+        />
+        <Image
+          src={HeroImage}
+          sizes="(max-width: 1280px) 100vw, 33vw"
+          objectFit="cover"
+          objectPosition="center"
+          alt="hero image example"
         />
         <div className="bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-semibold font-monoRoboto">
           Boulder's Finest One-stop Game Shop
