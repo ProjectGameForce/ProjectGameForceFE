@@ -2,8 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import { resolveTypeReferenceDirective } from "typescript";
-import Logo from "./assets/gameforcelogo.gif"
 import { Spinner } from "./Spinner";
+import HeroImage from "./assets/heroplaceholder.jpg";
+import StillLogo from "./assets/gflogo.png"
 export type ReviewObj = {
   name: string;
   review: string;
@@ -46,7 +47,8 @@ export default function Home() {
     <main className="">
       <nav className="flex justify-between py-[8px] w-[100%] bg-[#2b2b2b] sticky">
         <div>
-          <h1 className="flex text-[#e3e3e3] px-[15px]">Game Force</h1>
+          <Image 
+            src={StillLogo} alt={"logo"} height={60}  />
         </div>
         <div className="flex text-[#e3e3e3] justify-between space-x-4 mr-4">
           <a href={`tel:8163834597`} className="relative group border-b-2 border-transparent group-hover:border-current group-hover:duration-700">
@@ -101,9 +103,16 @@ export default function Home() {
           ))}
         </ul>
       </div>
-
       <div className="flex flex-col items-center">
-        <img src={`Logo`} alt="Logo GIF" width={500} height={200} className="tailwind-class-names"/>
+        <img src="./assets/gameforcelogo.gif" alt="Logo GIF" width={500} height={200} className="tailwind-class-names"/>
+        <Image 
+        src={HeroImage}
+        
+        sizes="(max-width: 1280px) 100vw, 33vw"
+        objectFit="cover"
+        objectPosition="center"
+        alt="hero image example"
+        />
         <div className="bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl mb-10 p-3 font-semibold font-monoRoboto">
           Boulder's Finest One-stop Game Shop
         </div>

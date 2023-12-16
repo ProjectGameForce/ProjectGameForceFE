@@ -10,9 +10,9 @@ export const Review = ({ reviewObj, styles }: ReviewProps) => {
   const { name, review } = reviewObj;
   return (
     <div
-      className={`-mx-5 hover:w-72 hover:mx-0 hover:h-96 hover:text-xl w-64 h-80 border-2 rounded-xl ${styles} border-gray-600 bg-gray-200`}
+      className={`hover:w-72 hover:mx-0 hover:h-96 hover:text-xl w-72 h-60 mx-10 rounded-xl ${styles} transition-transform duration-1000 ease-in-out`}
     >
-      <div className="m-5">
+      <div className="">
         <q>{review}</q>
         <h1 className="float-right mr-10 font-bold">-{name}</h1>
       </div>
