@@ -24,7 +24,7 @@ export function Spinner() {
   useEffect(() => {
     let interval: any;
     const startAutoScroll = () => {
-      interval = setInterval(goNext, 10000);
+      interval = setInterval(goNext, 1000);
     };
     startAutoScroll();
     /* const stopScroll = () => {
@@ -41,28 +41,16 @@ export function Spinner() {
     };
   }, [reviewList, goNext]);
   return (
-    <div className="flex flex-row mx-10 justify-center items-center my-20 w-[70%] overflow-hidden ">
+    <div className="mx-10 justify-center items-center my-20 w-[70%] ">
       <div
-        className="flex flex-col md:flex-row justify-center h-72 transition-transform duration-[10000ms]"
-        //style={{ transform: `translateX(-${300}%)` }}
+        className=" flex flex-row justify-center h-72 transition-transform duration-[10000ms] ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        <Review
-          reviewObj={
-            reviewList[
-              currentIndex === 0 ? reviewList.length - 1 : currentIndex - 1
-            ]
-          }
-          styles={""}
-        />
-        <Review reviewObj={reviewList[currentIndex]} styles={""} />
-        <Review
-          reviewObj={
-            reviewList[
-              currentIndex === reviewList.length - 1 ? 0 : currentIndex + 1
-            ]
-          }
-          styles={""}
-        />
+        {reviewList.map((item, index) => (
+          <div className="w-[100%]">
+            <Review reviewObj={item} key={index} styles={""} />
+          </div>
+        ))}
       </div>
     </div>
   );
