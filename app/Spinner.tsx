@@ -11,20 +11,19 @@ export function Spinner() {
 	};
 
 	useEffect(() => {
-
-		const interval = setInterval(goNext, 100);
+		const interval = setInterval(goNext, 10000);
 		return () => {
 			clearInterval(interval);
 		};
 	}, []);
 	return (
-		<div className="mx-10 justify-center items-center my-20 w-[70%] overflow-hidden">
+		<div className="mx-10 justify-center items-center my-20 w-[33%] overflow-hidden">
 			<div
-				className="flex flex-row transition-transform duration-300"
+				className="flex flex-row transition-transform duration-[3000ms] ease-in-out"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
 			>
 				{reviewList.map((item, index) => (
-					<div className="w-full" key={index}>
+					<div className="min-w-full max-w-full" key={index}>
 						<Review reviewObj={item} styles={""} />
 					</div>
 				))}

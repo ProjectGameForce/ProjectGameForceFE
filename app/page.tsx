@@ -149,7 +149,7 @@ export default function Home() {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
-			<div id="spinnerId" className=" flex w-[70%] justify-center ">
+			<div id="spinnerId" className=" flex justify-center ">
 				<Spinner />
 			</div>
 
