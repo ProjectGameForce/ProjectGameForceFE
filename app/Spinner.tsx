@@ -18,32 +18,19 @@ export function Spinner() {
 	};
 
 	useEffect(() => {
-		let interval: any;
-		const startAutoScroll = () => {
-			interval = setInterval(goNext, 1000);
-		};
-		startAutoScroll();
-		/* const stopScroll = () => {
-      clearInterval(interval);
-    }; */
-
-		/* const spinnerElement = document.getElementById("spinnerId");
-    spinnerElement?.addEventListener("mouseenter", stopScroll);
-    spinnerElement?.addEventListener("mouseleave", startAutoScroll); */
+		const interval = setInterval(goNext, 100);
 		return () => {
 			clearInterval(interval);
-			/* spinnerElement?.removeEventListener("mouseenter", stopScroll);
-      spinnerElement?.removeEventListener("mouseleave", startAutoScroll); */
 		};
-	});
+	}, []);
 	return (
-		<div className="mx-10 justify-center items-center my-20 w-[70%] overflow-hidden ">
+		<div className="mx-10 justify-center items-center my-20 w-[70%] overflow-hidden">
 			<div
-				className="transition-transform duration-[10000ms] ease-in-out"
+				className="flex flex-row transition-transform duration-300"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
 			>
 				{reviewList.map((item, index) => (
-					<div className="" key={index}>
+					<div className="w-full" key={index}>
 						<Review reviewObj={item} styles={""} />
 					</div>
 				))}
