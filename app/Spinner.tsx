@@ -6,18 +6,12 @@ import { SliderButton } from "./SliderButton";
 
 export function Spinner() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	/* const goToPrev = () => {
-    setCurrentIndex((currentCurrentIndex) => {
-      return currentCurrentIndex === 0
-        ? reviewList.length - 1
-        : currentCurrentIndex - 1;
-    });
-  }; */
 	const goNext = () => {
 		setCurrentIndex((currentIndex) => (currentIndex + 1) % reviewList.length);
 	};
 
 	useEffect(() => {
+
 		const interval = setInterval(goNext, 100);
 		return () => {
 			clearInterval(interval);
