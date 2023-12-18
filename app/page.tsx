@@ -57,7 +57,7 @@ export const reviewList: ReviewObj[] = [
 ];
 export default function Home() {
 	return (
-		<main className="">
+		<main className="w-full">
 			<nav className="flex justify-between py-[8px] w-[100%] items-center bg-[#3c3c3c] sticky">
 				<div className="items-center">
 					<Image src={StillLogo} alt={"logo"} height={20} />
@@ -153,7 +153,7 @@ export default function Home() {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
-			<div id="spinnerId" className=" flex justify-center ">
+			<div id="spinnerId" className=" flex md:w-full justify-center ">
 				<Spinner />
 			</div>
 

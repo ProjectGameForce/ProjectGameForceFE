@@ -17,7 +17,7 @@ export function Spinner() {
 		};
 	}, []);
 	return (
-		<div className="mx-10 justify-center items-center my-20 w-[33%] overflow-hidden">
+		<div className="mx-10 justify-center items-center my-20 md:w-[45%] w-full overflow-hidden">
 			<div
 				className="flex flex-row transition-transform duration-[3000ms] ease-in-out"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}

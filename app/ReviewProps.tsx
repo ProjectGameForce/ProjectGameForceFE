@@ -12,7 +12,7 @@ export const Review = ({ reviewObj, styles }: ReviewProps) => {
 		<div
 			className={`h-60 mx-10 rounded-xl ${styles} transition-transform duration-1000 ease-in-out`}
 		>
-			<div className="">
+			<div className=" hover:text-xl">
 				<q>{review}</q>
 				<h1 className="float-right mr-10 font-bold">-{name}</h1>
 			</div>
