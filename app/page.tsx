@@ -32,23 +32,27 @@ export const reviewList: ReviewObj[] = [
 	},
 	{
 		id: 4,
-		name: "Emily Davis",
-		review: "Amazing quality, will definitely order again.",
+		name: "neat pit",
+		review:
+			"They not only had an amazing selection of games for all systems, but the gentleman there was very friendly, patient, and went above and beyond to help me select pristine retro games.",
 	},
 	{
 		id: 5,
-		name: "Michael Brown",
-		review: "Not quite what I expected, but good overall.",
+		name: "Jesse Green",
+		review:
+			"This place is a gem from a forgotten time where game stores actually sell used items from all generations. I was killing myself looking to get ahold of an Xbox 360 and a complete rock band set up. With looking online at places like eBay, it looked like I was gonna have to shell out over a thousand dollars for everything. Once i found out game force still exists, I found everything I needed and I think I spent under 400 for everything. The store is stacked with tons of inventory and the staff was awesome.",
 	},
 	{
 		id: 6,
-		name: "Sarah Wilson",
-		review: "Customer support was helpful and responsive.",
+		name: "Eric Fox",
+		review:
+			"highly recommend. it is a small, independently owned game shop that has games ranging from the early 90's (perhaps earlier) up to modern. the selection is incredibly wide and interesting. if you're looking for japanese games, they have them. good pricing as well -- i've bought on the japanese market and the prices here for physical editions are incredibly reasonable. choose this store over Gamestop any day, genuinely far better.",
 	},
 	{
 		id: 7,
-		name: "David Martinez",
-		review: "The product exceeded my expectations!",
+		name: "agroed",
+		review:
+			"Best selection in the entire state. Tons of rare games. Extremely good pricing. Very nice staff. Never had to take back or resurface a single disc or cart. I drive all the way from Colorado Springs to come to this store and it's worth it every time. Can't wait to go back. Certified GOATed. Thanks for the Sega CD, guys.",
 	},
 ];
 export default function Home() {
