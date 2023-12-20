@@ -5,29 +5,32 @@ import { Review } from "./ReviewProps";
 import { SliderButton } from "./SliderButton";
 
 export function Spinner() {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const goNext = () => {
-		setCurrentIndex((currentIndex) => (currentIndex + 1) % reviewList.length);
-	};
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goNext = () => {
+    setCurrentIndex((currentIndex) => (currentIndex + 1) % reviewList.length);
+  };
 
-	useEffect(() => {
-		const interval = setInterval(goNext, 10000);
-		return () => {
-			clearInterval(interval);
-		};
-	}, []);
-	return (
-		<div className="mx-10 justify-center items-center my-20 md:w-[45%] w-full overflow-hidden">
-			<div
-				className="flex flex-row transition-transform duration-[3000ms] ease-in-out"
-				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-			>
-				{reviewList.map((item, index) => (
-					<div className="min-w-full max-w-full" key={index}>
-						<Review reviewObj={item} styles={""} />
-					</div>
-				))}
-			</div>
-		</div>
-	);
+  useEffect(() => {
+    const interval = setInterval(goNext, 10000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  return (
+    <div className="mx-10 justify-center items-center my-20 w-[75%] overflow-hidden">
+      <div
+        className="flex flex-row transition-transform "
+        style={{
+          transform: `translateX(-${currentIndex * 33}%)`,
+          transition: "transform duration-500 ease-in-out",
+        }}
+      >
+        {reviewList.map((item, index) => (
+          <div className="min-w-[33%] max-w-[33%] mx-4" key={index}>
+            <Review reviewObj={item} styles={""} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
