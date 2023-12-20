@@ -16,6 +16,12 @@ const config: Config = {
           pixel: ["'Pixelify Sans'"],
           monoRoboto: ["'Roboto Mono'"],
       },
+      animation: {
+        rotate: 'rotate 20s linear infinite alternate'
+      },
+      boxShadow:{
+        edgeBlur: 'inset 20px 20px 20px 20px rgba(0, 0, 0, 0.9);'
+      }
     },
   },
   plugins: [],

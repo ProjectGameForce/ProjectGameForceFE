@@ -8,55 +8,56 @@ import StillLogo from "./assets/gf-logo.png";
 import logoGIF from "./assets/gameforcelogo1000.gif";
 import avatarGIF from "./assets/gf-panda.gif";
 export type ReviewObj = {
-	id: number;
-	name: string;
-	review: string;
+  id: number;
+  name: string;
+  review: string;
 };
 export const reviewList: ReviewObj[] = [
-	{
-		id: 1,
-		name: "J Shade",
-		review:
-			"This is the best game store ever! I came in today in a bind with my PS3 and the gentleman helped me out immensely. I have been coming to this store for at least 20 years and there will never be a better place for games and movies then Gameforce!",
-	},
-	{
-		id: 2,
-		name: "Ian Lansberry",
-		review:
-			"I love this place and have been shopping here for years. Prices are good and they have a lot of vintage gaming equipment and games as well as new items too!",
-	},
-	{
-		id: 3,
-		name: "Ryan M",
-		review:
-			"I've been collecting retro games for close to 10 years, so I've been to a lot of game stores and this is one of the best I've been in. The selection was excellent. The pricing wasn't bad. It wasn't cheap, but I've seen worse. Overall I was impressed.",
-	},
-	{
-		id: 4,
-		name: "neat pit",
-		review:
-			"They not only had an amazing selection of games for all systems, but the gentleman there was very friendly, patient, and went above and beyond to help me select pristine retro games.",
-	},
-	{
-		id: 5,
-		name: "Jesse Green",
-		review:
-			"This place is a gem from a forgotten time where game stores actually sell used items from all generations. I was killing myself looking to get ahold of an Xbox 360 and a complete rock band set up. With looking online at places like eBay, it looked like I was gonna have to shell out over a thousand dollars for everything. Once i found out game force still exists, I found everything I needed and I think I spent under 400 for everything. The store is stacked with tons of inventory and the staff was awesome.",
-	},
-	{
-		id: 6,
-		name: "Eric Fox",
-		review:
-			"highly recommend. it is a small, independently owned game shop that has games ranging from the early 90's (perhaps earlier) up to modern. the selection is incredibly wide and interesting. if you're looking for japanese games, they have them. good pricing as well -- i've bought on the japanese market and the prices here for physical editions are incredibly reasonable. choose this store over Gamestop any day, genuinely far better.",
-	},
-	{
-		id: 7,
-		name: "agroed",
-		review:
-			"Best selection in the entire state. Tons of rare games. Extremely good pricing. Very nice staff. Never had to take back or resurface a single disc or cart. I drive all the way from Colorado Springs to come to this store and it's worth it every time. Can't wait to go back. Certified GOATed. Thanks for the Sega CD, guys.",
-	},
+  {
+    id: 1,
+    name: "J Shade",
+    review:
+      "This is the best game store ever! I came in today in a bind with my PS3 and the gentleman helped me out immensely. I have been coming to this store for at least 20 years and there will never be a better place for games and movies then Gameforce!",
+  },
+  {
+    id: 2,
+    name: "Ian Lansberry",
+    review:
+      "I love this place and have been shopping here for years. Prices are good and they have a lot of vintage gaming equipment and games as well as new items too!",
+  },
+  {
+    id: 3,
+    name: "Ryan M",
+    review:
+      "I've been collecting retro games for close to 10 years, so I've been to a lot of game stores and this is one of the best I've been in. The selection was excellent. The pricing wasn't bad. It wasn't cheap, but I've seen worse. Overall I was impressed.",
+  },
+  {
+    id: 4,
+    name: "neat pit",
+    review:
+      "They not only had an amazing selection of games for all systems, but the gentleman there was very friendly, patient, and went above and beyond to help me select pristine retro games.",
+  },
+  {
+    id: 5,
+    name: "Jesse Green",
+    review:
+      "This place is a gem from a forgotten time where game stores actually sell used items from all generations. I was killing myself looking to get ahold of an Xbox 360 and a complete rock band set up. With looking online at places like eBay, it looked like I was gonna have to shell out over a thousand dollars for everything. Once i found out game force still exists, I found everything I needed and I think I spent under 400 for everything. The store is stacked with tons of inventory and the staff was awesome.",
+  },
+  {
+    id: 6,
+    name: "Eric Fox",
+    review:
+      "highly recommend. it is a small, independently owned game shop that has games ranging from the early 90's (perhaps earlier) up to modern. the selection is incredibly wide and interesting. if you're looking for japanese games, they have them. good pricing as well -- i've bought on the japanese market and the prices here for physical editions are incredibly reasonable. choose this store over Gamestop any day, genuinely far better.",
+  },
+  {
+    id: 7,
+    name: "agroed",
+    review:
+      "Best selection in the entire state. Tons of rare games. Extremely good pricing. Very nice staff. Never had to take back or resurface a single disc or cart. I drive all the way from Colorado Springs to come to this store and it's worth it every time. Can't wait to go back. Certified GOATed. Thanks for the Sega CD, guys.",
+  },
 ];
 export default function Home() {
+
 	return (
 		<main className="">
 			<nav className="flex justify-between py-[8px] w-[100%] items-center bg-[#3c3c3c] sticky">
@@ -92,49 +93,52 @@ export default function Home() {
 				</div>
 			</nav>
 
-			<div className="hidden md:block">
-				<ul className="flex justify-between pb-2 h-8 px-6 bg-[#4d7fc7] font-pixel">
-					{/* Maps the array. This causes the item to be repeated over the element on the inside */}
-					{[
-						"Playstation",
-						"Xbox",
-						"Nintendo",
-						"Wall Scrolls",
-						"Plushies",
-						"Board Games",
-						"Game Disks",
-						"Game Cartridges",
-						"Collectables",
-					].map((item) => (
-						<li className="w-18 text-2xl text-[#e3e3e3] hover:animate-bounce" key={item}>
-							{item}
-						</li>
-					))}
-				</ul>
-			</div>
-			<div className="flex flex-col relative items-center py-0">
-				<Image
-					src={logoGIF}
-					alt="Logo GIF"
-					width={800}
-					height={200}
-					className=" absolute tailwind-class-names mb-0 mt-32 z-20"
-					unoptimized
-				/>
-				<Image
+      <div className="hidden md:block">
+        <ul className="flex justify-between pb-2 h-8 px-6 bg-[#4d7fc7] font-pixel">
+          {/* Maps the array. This causes the item to be repeated over the element on the inside */}
+          {[
+            "Playstation",
+            "Xbox",
+            "Nintendo",
+            "Wall Scrolls",
+            "Plushies",
+            "Board Games",
+            "Game Disks",
+            "Game Cartridges",
+            "Collectables",
+          ].map((item) => (
+            <li
+              className="w-18 text-2xl text-[#e3e3e3] hover:animate-bounce"
+              key={item}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex flex-col relative items-center py-0">
+        <Image
+          src={logoGIF}
+          alt="Logo GIF"
+          width={800}
+          height={200}
+          className=" absolute tailwind-class-names mb-0 mt-32 z-20"
+          unoptimized
+        />
+        <Image
+          src={HeroImage}
+          width={1600}
+          height={500}
+          objectFit="cover"
+          objectPosition="center"
+          alt="hero image example"
+          className="-z-10"
+        />
+        <div className=" -mt-8 mb-16 z-20 bg-[#ff7d0d] border-[5px] border-[#ce1d00] rounded-[2.5rem] mx-auto text-3xl p-3 font-semibold font-monoRoboto">
+          Boulder's Finest One-stop Game Shop
+        </div>
+      </div>
 
-					src={HeroImage}
-					width={1600}
-					height={500}
-					objectFit="cover"
-					objectPosition="center"
-					alt="hero image example"
-					className="-z-10"
-				/>
-				<div className=" -mt-8 mb-16 z-20 bg-[#ff7d0d] border-[5px] border-[#ce1d00] rounded-[2.5rem] mx-auto text-3xl p-3 font-semibold font-monoRoboto">
-					Boulder's Finest One-stop Game Shop
-				</div>
-			</div>
 
 			<div className="flex mt--80 flex-col md:flex-row justify-between mx-[7%]">
 				<div className="flex flex-col items-center">

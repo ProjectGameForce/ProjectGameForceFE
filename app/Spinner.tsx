@@ -11,22 +11,27 @@ export function Spinner() {
   };
 
   useEffect(() => {
-    const interval = setInterval(goNext, 10000);
+    const interval = setInterval(goNext, 20000);
     return () => {
       clearInterval(interval);
     };
   }, []);
   return (
-    <div className="mx-10 justify-center items-center my-20 w-[33%] overflow-hidden">
-      <div
-        className="flex flex-row transition-transform duration-[3000ms] ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {reviewList.map((item, index) => (
-          <div className="min-w-full max-w-full" key={index}>
-            <Review reviewObj={item} styles={""} />
-          </div>
-        ))}
+    <div className="mx-10 justify-center items-center my-20 w-[75%] overflow-hidden">
+      <div className="w-full bg-gradient-to-r z-20 from-white via-slate-50/0 to-white">
+        <div
+          className="flex flex-row animate-rotate"
+          style={{
+            transform: `translateX(-${currentIndex}%)`,
+            //transition: "transform duration-[10000ms] ease-in-out",
+          }}
+        >
+          {reviewList.map((item, index) => (
+            <div className="min-w-[33%] max-w-[33%] mx-4" key={index}>
+              <Review reviewObj={item} styles={""} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
