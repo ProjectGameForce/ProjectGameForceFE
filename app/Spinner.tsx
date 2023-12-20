@@ -18,18 +18,20 @@ export function Spinner() {
   }, []);
   return (
     <div className="mx-10 justify-center items-center my-20 w-[75%] overflow-hidden">
-      <div
-        className="flex flex-row transition-transform "
-        style={{
-          transform: `translateX(-${currentIndex * 33}%)`,
-          transition: "transform duration-500 ease-in-out",
-        }}
-      >
-        {reviewList.map((item, index) => (
-          <div className="min-w-[33%] max-w-[33%] mx-4" key={index}>
-            <Review reviewObj={item} styles={""} />
-          </div>
-        ))}
+      <div className="w-full bg-gradient-to-r z-20 from-white via-slate-50/0 to-white">
+        <div
+          className="flex flex-row animate-rotate"
+          style={{
+            transform: `translateX(-${currentIndex}%)`,
+            //transition: "transform duration-[10000ms] ease-in-out",
+          }}
+        >
+          {reviewList.map((item, index) => (
+            <div className="min-w-[33%] max-w-[33%] mx-4" key={index}>
+              <Review reviewObj={item} styles={""} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
