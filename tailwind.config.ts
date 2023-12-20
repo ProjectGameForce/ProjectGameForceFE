@@ -16,6 +16,9 @@ const config: Config = {
           pixel: ["'Pixelify Sans'"],
           monoRoboto: ["'Roboto Mono'"],
       },
+      animation: {
+        rotate: 'rotate 10s linear infinite alternate'
+      }
     },
   },
   plugins: [],
