@@ -44,10 +44,10 @@ export const reviewList: ReviewObj[] = [
 ];
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-[#d7d7d7]">
       <nav className="flex justify-between py-[8px] w-[100%] items-center bg-[#3c3c3c] sticky">
         <div className="items-center">
-          <Image src={StillLogo} alt={"logo"} height={20} />
+          <Image src={StillLogo} alt={"logo"} height={30} />
         </div>
         <div className="flex text-[#e3e3e3] justify-between space-x-4 mr-4">
           <a
@@ -79,7 +79,7 @@ export default function Home() {
       </nav>
 
       <div className="hidden md:block">
-        <ul className="flex justify-between py-1 h-8 px-6 bg-blue-200 font-monoRoboto">
+        <ul className="flex justify-between py-1 h-8 px-6  bg-[#ed5937] font-monoRoboto">
           {/* Maps the array. This causes the item to be repeated over the element on the inside */}
           {[
             "Playstation",
