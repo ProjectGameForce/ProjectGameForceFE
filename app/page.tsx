@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { resolveTypeReferenceDirective } from "typescript";
 import { Spinner } from "./Spinner";
-import HeroImage from "./assets/flat-irons-hero-image.png";
+import HeroImage from "./assets/flat-iron-hero-image.png";
 import StillLogo from "./assets/gf-logo.png";
 import logoGIF from "./assets/gameforcelogo1000.gif";
 export type ReviewObj = {
@@ -92,7 +92,7 @@ export default function Home() {
 			</nav>
 
 			<div className="hidden md:block">
-				<ul className="flex justify-between py-1 h-8 px-6 bg-blue-200 font-monoRoboto">
+				<ul className="flex justify-between pb-2 h-8 px-6 bg-[#4d7fc7] font-pixel">
 					{/* Maps the array. This causes the item to be repeated over the element on the inside */}
 					{[
 						"Playstation",
@@ -105,22 +105,23 @@ export default function Home() {
 						"Game Cartridges",
 						"Collectables",
 					].map((item) => (
-						<li className="w-18 hover:animate-bounce" key={item}>
+						<li className="w-18 text-2xl text-[#e3e3e3] hover:animate-bounce" key={item}>
 							{item}
 						</li>
 					))}
 				</ul>
 			</div>
-			<div className="flex flex-col relative items-center mt-20">
+			<div className="flex flex-col relative items-center py-0">
 				<Image
 					src={logoGIF}
 					alt="Logo GIF"
 					width={800}
 					height={200}
-					className=" absolute tailwind-class-names mb-10 z-20"
+					className=" absolute tailwind-class-names mb-0 mt-32 z-20"
 					unoptimized
 				/>
 				<Image
+
 					src={HeroImage}
 					width={1600}
 					height={500}
@@ -129,12 +130,12 @@ export default function Home() {
 					alt="hero image example"
 					className="-z-10"
 				/>
-				<div className=" -mt-40 mb-44 z-20 bg-orange-500 border-[5px] border-orange-800 rounded-[2.5rem] mx-auto text-3xl p-3 font-semibold font-monoRoboto">
-					Boulder&apos s Finest One-stop Game Shop
+				<div className=" -mt-8 mb-16 z-20 bg-[#ff7d0d] border-[5px] border-[#ce1d00] rounded-[2.5rem] mx-auto text-3xl p-3 font-semibold font-monoRoboto">
+					Boulder's Finest One-stop Game Shop
 				</div>
 			</div>
 
-			<div className="flex flex-col md:flex-row justify-between mx-[10%]">
+			<div className="flex mt--80 flex-col md:flex-row justify-between mx-[10%]">
 				<div className="flex flex-col items-center">
 					<h1 className="text-[50px] font-monoRoboto">Buy • Sell • Trade</h1>
 					<p className=" w-[26rem] text-2xl font-monoRoboto">
