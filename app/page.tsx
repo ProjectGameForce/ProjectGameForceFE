@@ -3,9 +3,9 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { resolveTypeReferenceDirective } from "typescript";
 import { Spinner } from "./Spinner";
-import HeroImage from "./assets/heroplaceholder.jpg";
-import StillLogo from "./assets/gfLogo.png";
-import logoGIF from "./assets/hope.gif";
+import HeroImage from "./assets/flat-irons-hero-image.png";
+import StillLogo from "./assets/gf-logo.png";
+import logoGIF from "./assets/gameforcelogo1000.gif";
 export type ReviewObj = {
 	id: number;
 	name: string;
@@ -122,8 +122,8 @@ export default function Home() {
 				/>
 				<Image
 					src={HeroImage}
-					width={960}
-					height={100}
+					width={1600}
+					height={500}
 					objectFit="cover"
 					objectPosition="center"
 					alt="hero image example"
