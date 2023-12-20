@@ -6,6 +6,7 @@ import { Spinner } from "./Spinner";
 import HeroImage from "./assets/flat-iron-hero-image.png";
 import StillLogo from "./assets/gf-logo.png";
 import logoGIF from "./assets/gameforcelogo1000.gif";
+import avatarGIF from "./assets/gf-panda.gif";
 export type ReviewObj = {
 	id: number;
 	name: string;
@@ -59,7 +60,7 @@ export default function Home() {
 	return (
 		<main className="">
 			<nav className="flex justify-between py-[8px] w-[100%] items-center bg-[#3c3c3c] sticky">
-				<div className="items-center">
+				<div className="items-center pl-2">
 					<Image src={StillLogo} alt={"logo"} height={20} />
 				</div>
 				<div className="flex text-[#e3e3e3] justify-between space-x-4 mr-4">
@@ -135,7 +136,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="flex mt--80 flex-col md:flex-row justify-between mx-[10%]">
+			<div className="flex mt--80 flex-col md:flex-row justify-between mx-[7%]">
 				<div className="flex flex-col items-center">
 					<h1 className="text-[50px] font-monoRoboto">Buy • Sell • Trade</h1>
 					<p className=" w-[26rem] text-2xl font-monoRoboto">
@@ -154,9 +155,21 @@ export default function Home() {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
+
 			<div id="spinnerId" className=" flex justify-center ">
 				<Spinner />
 			</div>
+      
+      <div>
+        <Image
+            src={avatarGIF}
+            alt="Logo GIF"
+            width={200}
+            className=" absolute tailwind-class-names mb-0 mt-32 z-20"
+            unoptimized
+            className=" mb--80 ml-80 mt-[-400px] mr-[-800px]"
+          />
+      </div>
 
 			<div>
 				<footer className="bg-[#2b2b2b] h-28 mt-20">
